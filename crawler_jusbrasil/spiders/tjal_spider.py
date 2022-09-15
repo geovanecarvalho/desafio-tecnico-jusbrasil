@@ -198,22 +198,23 @@ class TjalSpiterPrimeiroGrau(scrapy.Spider):
                 lista_title_link_da_movimetacao
                 )
 
-
+        
         yield {
+            'numero_processo': "0710802-55.2018.8.02.0001",
             'classe': classe,
             'area': area,
             'assunto': assunto,
             'data_de_distribuicao': data_de_distribuicao,
             'juiz': juiz,
             'valor_da_acao':valor_da_acao,
-            'partes_do_processo': self.get_partes_do_processo(
+           
+            'partes_do_processo': str(self.get_partes_do_processo(
                 partes_autor,
                 partes_advogado_autor,
                 partes_re,
                 partes_advogados_re
-            ),
-            'lista_das_movimentacao': lista_data_da_movimentacao           
+            )),
+            'lista_das_movimentacao': str(lista_data_da_movimentacao)            
         }
        
    
-    
