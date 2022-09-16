@@ -19,7 +19,7 @@ from api_jusbrasil.core.views import CrawlerViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'crawler', CrawlerViewSet)
+router.register(r'api/v1/jtal', CrawlerViewSet)
 
 
 urlpatterns = [
