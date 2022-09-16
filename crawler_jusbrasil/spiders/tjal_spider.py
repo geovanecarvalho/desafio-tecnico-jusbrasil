@@ -2,7 +2,7 @@
 import scrapy
 
 
-class TjalSpiterPrimeiroGrau(scrapy.Spider):
+class TjalSpiderPrimeiroGrau(scrapy.Spider):
     name = 'tjal_primeiro_grau'
     numero_processo = "0710802-55.2018.8.02.0001"
     start_urls = [f'https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=01000O7550000&processo.foro=1&processo.numero={numero_processo}']
@@ -163,6 +163,7 @@ class TjalSpiterPrimeiroGrau(scrapy.Spider):
 
     def parse(self, response):
         # Atributos do processo
+        numero_processo =response.xpath('//*[@id="numeroProcesso"]/text()').get().strip()
         classe = response.xpath('//*[@id="classeProcesso"]/text()').get()
         area = response.xpath('//*[@id="areaProcesso"]/span/text()').get()
         assunto = response.xpath('//*[@id="assuntoProcesso"]/text()').get()
@@ -200,7 +201,7 @@ class TjalSpiterPrimeiroGrau(scrapy.Spider):
 
         
         yield {
-            'numero_processo': "0710802-55.2018.8.02.0001",
+            'numero_processo': numero_processo,
             'classe': classe,
             'area': area,
             'assunto': assunto,

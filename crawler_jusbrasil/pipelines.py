@@ -24,7 +24,7 @@ class CrawlerJusbrasilPipeline:
             value = next(result)
         except StopIteration as ex:
             self.conn.execute(
-                'create table crawler(numero_processo varchar(25) primary key, classe varchar(50), area varchar(50), assunto varchar(50), data_de_distribuicao varchar(50), juiz varchar(50), valor_da_acao varchar(50), partes_do_processo text, lista_das_movimentacao text)'
+                'create table crawler(id integer primary key,numero_processo varchar(25) unique not null, classe varchar(50), area varchar(50), assunto varchar(50), data_de_distribuicao varchar(50), juiz varchar(50), valor_da_acao varchar(50), partes_do_processo text, lista_das_movimentacao text)'
             )
 
     def open_spider(self, spider):
