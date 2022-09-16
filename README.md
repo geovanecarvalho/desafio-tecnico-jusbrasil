@@ -16,7 +16,7 @@ Para executar projeto é preciso seguir todos os passo a baixo para que funcione
 ### **Instalando todas as dependências**
 
 ```
-$ mkvirtualenv censo -p python3
+$ mkvirtualenv jusbrasil -p python3
 $ pip install -r requirements.txt
 ```
 ### **Executando o crawler**
