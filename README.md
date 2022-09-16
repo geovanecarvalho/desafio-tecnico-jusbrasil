@@ -37,4 +37,4 @@ $ python manage.py runserver
 ```
 Após subir o projeto verifique na porta 8000:
 
-*http://localhost:8000/
+http://localhost:8000/
